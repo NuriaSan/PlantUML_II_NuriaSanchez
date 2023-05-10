@@ -1,28 +1,29 @@
 @startuml
 left to right direction
 actor "Empleado" as em
-actor "Administrador" as ad
 
-rectangle "Empresa Pedidos"{
+usecase "Alta Cliente" as ac
 usecase "Introducir Pedido" as ip
 usecase "Cancelar Pedido" as cp
 usecase "Obtener Estado Pedido" as op
-usecase "Borrar Pedido" as bop
 usecase "Buscar Pedidos" as bup
-usecase "Alta Cliente" as ac
 usecase "Buscar Cliente" as bc
-usecase "Nuevo producto" as np
-usecase "Borrar Producto" as bpro
-}
+usecase "Pago con Tarjeta" as pt
+usecase "Pago en Cuenta" as pc
+
+
 em--ip
-em--cp
-em--op
-em--bop
-em--bup
+"ac"..>ip : <<extiende>>
+"ip"..>bc : <<incluye>>
 em--ac
-em--bc
-ad--np
-ad--bpro
+em--op
+em--cp
+em--bup
+"pt"..>ip : <<extiende>>
+"pc"..>ip : <<extiende>>
+"op"..>bup : <<incluye>>
+"cp"..>bup : <<incluye>>
+
 
 
 @enduml
