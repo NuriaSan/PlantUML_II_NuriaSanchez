@@ -1,21 +1,14 @@
 @startuml
 left to right direction
-actor "Socio" as so
 actor "Bibliotecario" as bib
 
-rectangle Biblioteca{
-  usecase "Reservar libro" as res
-  usecase "Prestar libro" as pre
-  usecase "Devolver libro" as dev
-  usecase "Actualizar catálogo" as act
+rectangle {
+  usecase "Baja Socio" as bas
+  usecase "Buscar socio" as bus
+
 }
-so--res
-so--pre
-so--dev
-
-bib--pre
-bib--act
-
+bib--bas
+(bas)..>(bus): <<include>>
 
 
 @enduml
