@@ -1,14 +1,12 @@
 @startuml
 left to right direction
-actor "Bibliotecario" as bib
+actor "Agente" as ag
 
-rectangle {
-  usecase "Baja Socio" as bas
-  usecase "Buscar socio" as bus
+  usecase "Evaluar Solicitud de Crédito" as ev
+  usecase "Solicitar Información adicional al cliente" as so
 
-}
-bib--bas
-(bas)..>(bus): <<include>>
+ag--ev
+(so)..>(ev): <<extend>>
 
 
 @enduml
