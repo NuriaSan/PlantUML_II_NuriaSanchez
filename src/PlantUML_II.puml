@@ -1,12 +1,17 @@
 @startuml
+left to right direction
+actor "Empleado" as em
+actor "Administrador" as ad
 
-actor "Cliente Bancario" as cb
-actor "Cliente Corporativo" as cc
-actor "Cliente Normal" as cn
+rectangle "Empresa Pedidos"{
 
-cc--|>cb
-cn--|>cb
 
-note right of cb :Actor Antecesor
-note right of cn :Actor descendiente
+
+
+
+}
+em--"Empresa Pedidos"
+ad--"Empresa Pedidos"
+
+
 @enduml
