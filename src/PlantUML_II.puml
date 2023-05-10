@@ -1,24 +1,21 @@
 @startuml
 left to right direction
-actor "Actor" as ac1
-actor "Actor2" as ac2
+actor "Socio" as so
+actor "Bibliotecario" as bib
 
-rectangle Sistema{
-  usecase "Caso de Uso" as CU1
-  usecase "Caso de uso" as CU2
-  usecase "Caso de uso" as CU3
+rectangle Biblioteca{
+  usecase "Reservar libro" as res
+  usecase "Prestar libro" as pre
+  usecase "Devolver libro" as dev
+  usecase "Actualizar catálogo" as act
 }
+so--res
+so--pre
+so--dev
 
-ac1--CU1
-ac1--CU2
-ac1--CU3
+bib--pre
+bib--act
 
-ac2--CU1
-ac2--CU3
-
-note left of Sistema: Comunicación
-
-note right of Sistema:Entorno del Sistema
 
 
 @enduml
