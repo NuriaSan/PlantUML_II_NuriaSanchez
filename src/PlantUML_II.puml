@@ -1,12 +1,12 @@
 @startuml
 
-actor "Agente" as ag
+actor "Cliente Bancario" as cb
+actor "Cliente Corporativo" as cc
+actor "Cliente Normal" as cn
 
-  usecase "Enviar Solicitud de Crédito" as env
-  usecase "Enviar Solicitud de Crédito Personal" as cp
-  usecase "Enviar Solicitud de Crédito Empresarial" as ce
+cc--|>cb
+cn--|>cb
 
-ag-->env
-cp--|>env
-ce--|>env
+note right of cb :Actor Antecesor
+note right of cn :Actor descendiente
 @enduml
