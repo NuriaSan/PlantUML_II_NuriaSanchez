@@ -1,12 +1,12 @@
 @startuml
-left to right direction
+
 actor "Agente" as ag
 
-  usecase "Evaluar Solicitud de Crédito" as ev
-  usecase "Solicitar Información adicional al cliente" as so
+  usecase "Enviar Solicitud de Crédito" as env
+  usecase "Enviar Solicitud de Crédito Personal" as cp
+  usecase "Enviar Solicitud de Crédito Empresarial" as ce
 
-ag--ev
-(so)..>(ev): <<extend>>
-
-
+ag-->env
+cp--|>env
+ce--|>env
 @enduml
